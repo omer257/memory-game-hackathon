@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 
 //design the schema below
@@ -11,4 +12,3 @@ let cardSchema = new mongoose.Schema({
 let Card = mongoose.model('card', cardSchema)
 
 module.exports = Card
-
