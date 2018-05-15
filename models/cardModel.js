@@ -1,8 +1,14 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema
 
-let cardSchema = new Schema ({
-    img_url: String,
+var mongoose = require('mongoose');
+
+//design the schema below
+let cardSchema = new mongoose.Schema({
     name: String,
-    state: Number
+    state: Number,
+    img_url: String
 });
+
+
+let Card = mongoose.model('card', cardSchema)
+
+module.exports = Card
