@@ -1,6 +1,11 @@
 class CardRepository {
     constructor() {
         this.cardsCollection = [];
+        this.cardStates = {
+            back = 0,
+            front = 1,
+            matched = 2
+        }
     }
 
     getCards() {
@@ -14,3 +19,5 @@ class CardRepository {
 
     
 }
+
+export default CardRepository;
