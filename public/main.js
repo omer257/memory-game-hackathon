@@ -4,7 +4,8 @@ import EventsHandler from './eventHandler.js';
 
 let cardRepository = new CardRepository();
 let gameRenderer = new GameRenderer();
-let eventsHandler = new EventsHandler(cardRepository);
+let eventsHandler = new EventsHandler(cardRepository, gameRenderer);
 
 
 eventsHandler.startGame();
+

@@ -1,5 +1,13 @@
+import Api from './Api.js';
+
+
+/**
+ * @class Responsible for storing and manipulating Spacebook posts, in-memory
+ */
+
 class CardRepository {
     constructor() {
+        this.api = new Api()
         this.cardsCollection = [];
         this.cardStates = {
             back : 0,
@@ -8,18 +16,13 @@ class CardRepository {
         }
     }
 
-    getCards() {
-       return $.get('/cards')
-        .then(function(cardsFromDB){
-            this.cardsCollection = cardsFromDB;
-            console.log(this.cardsCollection);
-            return this.cardsCollection;
-        })
+   async getCards() {
+
+    this.cardsCollection = await this.api.fetch()
+
     }
 
-
     shuffleCards() {
-
     }
 
     

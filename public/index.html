@@ -2,62 +2,46 @@
 <html>
 
 <head>
-       
-    <!-- <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-        crossorigin="anonymous">
+
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>The Best Memory Card Game</title>
 </head>
 
 <body>
-    <div class="row">
-            <div class="start-game-page">
-                <h1>The Best Memory Card Game</h1>
-                <button type="btn btn-primary">start game</button>
-            </div>
-            <div class="flex-container cards-container">
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    <div class="flex-item" id="1"><img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"/></div>
-                    
-                </div> 
-            
+    <div class="row game">
+        <div class="start-game-page">
+            <h1>The Best Memory Card Game</h1>
+            <button type="button" class="btn btn-primary" id="getCards">start game</button>
+        </div>
+        <div class="flex-container cards-container">
+        </div>
+
 
     </div>
 
-    
-        
-<!-- =====================================OPEN WHAT YOU HAVE A SERVER========================= -->
-<!-- =========================================================================================-->
+
+
+    <!-- =====================================OPEN WHAT YOU HAVE A SERVER========================= -->
+    <!-- =========================================================================================-->
 
 
 
-    <!-- <script src="jquery/dist/jquery.js"></script> -->
-    <!-- <script src="handlebars/dist/handlebars.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- <script src="main.js" type="module"></script> -->
-    <script src="main.js" type="script"></script>
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="handlebars/dist/handlebars.js"></script>
+
+    <script src="main.js" type="module"></script>
 
 
-<!-- ======================================HANDLEBARS========================================= -->
-<!-- ========================================================================================= -->
-<!-- GAME CONTAINER -->
 
-     <!-- <script id="cards-container-template" type="text/x-handlebars-template"> -->
-        <!-- <div class="flex-container cards-container"></div> -->
-    <!-- </script> -->
+    <!-- ======================================HANDLEBARS========================================= -->
+    <!-- ========================================================================================= -->
+       <!-- CARD TAMPLATE -->
 
-<!-- CARD TAMPLATE -->
-
-    <!-- <script id="cards-template" type="text/x-handlebars-template"> -->
-            <!-- <div class="flex-item" id={{_id}}><img class="img" src="{{img}}"/></div> -->
-    <!-- </script>  -->
+    <script id="cards-template" type="text/x-handlebars-template">
+        <div>{{name}}</div>
+            <div class="flex-item" id={{_id}}><img class="img" src="{{img_url}}"/></div>
+    </script>
 
 </body>
 
