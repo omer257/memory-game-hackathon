@@ -8,24 +8,28 @@ import Api from './Api.js';
 class CardRepository {
     constructor() {
         this.api = new Api()
+        this.dbCards = [];
         this.cardsCollection = [];
         this.cardStates = {
-            back : 0,
-            front : 1,
-            matched : 2
+            back: 0,
+            front: 1,
+            matched: 2
         }
     }
 
-   async getCards() {
+    async getCards() {
 
-    this.cardsCollection = await this.api.fetch()
+        this.dbCards = await this.api.fetch()
+    }
 
+    dupCards() {
+        this.cardsCollection = this.dbCards.concat(this.dbCards)
     }
 
     shuffleCards() {
     }
 
-    
+
 }
 
 export default CardRepository;

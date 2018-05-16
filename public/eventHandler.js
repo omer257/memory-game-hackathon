@@ -10,7 +10,8 @@ class EventsHandler {
           
             this.cardRepository.getCards()
              .then(()=>{
-                console.log(this.cardRepository.cardsCollection)
+                 this.cardRepository.dupCards()
+                console.log(this.cardRepository.dbCards)
                 this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
             })
         })
