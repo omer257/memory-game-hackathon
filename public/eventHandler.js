@@ -1,23 +1,25 @@
 class EventsHandler {
-    constructor(){
+    constructor(cardRepository) {
+        this.cardRepository = cardRepository;
+    }
+
+    startGame() {
+        $('#getCards').click( () => {
+            this.cardRepository.getCards();
+        })
+    }
+
+    restartGame() {
 
     }
 
-    startGame(){
-
-    }
-
-    restartGame(){
-
-    }
-
-    clickCard(card){
+    clickCard(card) {
 
     }
 
     //pauseGame(){}
 
-    
-} 
 
-export default EventHandler;
+}
+
+export default EventsHandler;
