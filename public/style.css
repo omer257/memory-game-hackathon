@@ -1,0 +1,65 @@
+
+/* ========GAME SCREEN========= */
+.flex-container {
+    padding: 0;
+    margin: auto;
+    list-style: none;
+    
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    width: 38%;
+    background-color: white;
+  
+  }
+  
+  .flex-item {
+    background: tomato;
+    padding: 5px;
+    width: 100px;
+    height: 150px;
+    margin-top: 10px;
+    
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+  }
+/* ===========CARDS=========== */
+  .img{
+    width: 100%;
+}
+/* =========START SCREEN======== */
+  .start-game-page{
+    height: 300px;
+    background-color:white;
+    margin: auto;
+    /* position: absolute;
+    left: 130px;
+    right: 130px; */
+    
+    /* z-index: -1; */
+  }
+  .start-game-page h1 {
+    padding-top: 100px;
+    text-align: center;
+    color: black;
+  }
+  body {
+    text-align: center;
+    direction: rtl;
+    color: white;
+    font-size: 1.1em;
+   font-family: 'Varela Round', sans-serif;
+  }
+
+  
+
+  
