@@ -1,12 +1,20 @@
 class EventsHandler {
-    constructor(cardRepository) {
+    constructor(cardRepository, gameRenderer) {
         this.cardRepository = cardRepository;
+        this.gameRenderer = gameRenderer;
+        
     }
 
     startGame() {
-        $('#getCards').click( () => {
-            this.cardRepository.getCards();
+        $('#getCards').on('click', () => {
+          
+            this.cardRepository.getCards()
+             .then(()=>{
+                console.log(this.cardRepository.cardsCollection)
+                this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
+            })
         })
+        
     }
 
     restartGame() {
