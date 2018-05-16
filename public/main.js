@@ -9,3 +9,4 @@ let eventsHandler = new EventsHandler(cardRepository, gameRenderer);
 
 eventsHandler.startGame();
 
+eventsHandler.clickCard()
