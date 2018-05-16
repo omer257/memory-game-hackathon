@@ -22,22 +22,22 @@ class MatchChecker {
         setTimeout(function () {
             openedCards[0].classList.add("is-flipped");
             openedCards[1].classList.add("is-flipped");
-        }, 1000);
+        }, 2000);
         setTimeout(function () {
-            openedCards[0].hide();
-            openedCards[1].hide();
+            $(openedCards[0]).hide();
+            $(openedCards[1]).hide();
             this.enable();
-        }, 100);
+        }, 4000);
         openedCards = [];
     }
 
     unmatched() {
         this.disable();
         setTimeout(function () {
-            openedCards[0].classList.add("is-flipped");
-            openedCards[1].classList.add("is-flipped");
+            $(openedCards[0]).classList.add("is-flipped");
+            $(openedCards[1]).classList.add("is-flipped");
             this.enable();
-        },1000);
+        }, 2000);
         openedCards = [];
     }
 
