@@ -4,9 +4,11 @@ class MatchChecker {
     }
 
     cardOpen() {
-        openedCards.push(this);
-        openedCards[0].classList.add("is-flipped");
+        this.openedCards.push(this);
+        this.openedCards[0].classList.add("is-flipped");
+        this.openedCards[0].classList.add("disabled");
         openedCards[1].classList.add("is-flipped");
+        this.openedCards[0].classList.add("disabled");
         var len = openedCards.length;
         if (len === 2) {
             if (openedCards[0].id === openedCards[1].id) {
@@ -18,6 +20,8 @@ class MatchChecker {
     };
 
     matched() {
+        let beep = ("./sounds/51.wav");
+        beep.play();
         this.disable();
         setTimeout(function () {
             openedCards[0].classList.add("is-flipped");
@@ -32,6 +36,8 @@ class MatchChecker {
     }
 
     unmatched() {
+        let buzz = new Audio("./sounds/buzz.wav");
+        buzz.play();
         this.disable();
         setTimeout(function () {
             $(openedCards[0]).classList.add("is-flipped");
