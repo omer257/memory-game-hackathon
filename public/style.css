@@ -38,7 +38,9 @@
            
 }
 
-
+.card.disable{
+  pointer-events: none;
+}
 
 .card.is-flipped {
   transform: rotateY(180deg);
