@@ -4,6 +4,7 @@ class EventsHandler {
         this.gameRenderer = gameRenderer;
         this.matchChecker = matchChecker;
         this.numberOfMatches = 0;
+        this.matchValues = [];
     }
 
     startGame() {
@@ -33,20 +34,23 @@ class EventsHandler {
             this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
             console.log(this.cardRepository.cardsCollection);
             
-           var matchValues = this.matchChecker.cardOpen(cardId, cardName);
-
-            if (matchValues[2] === true) {
-             numberOfMatches += 1;
-
-                if (numberOfMatches === 4) {
-                    this.gameRenderer.gameOver();
-                     return;
-                }
-             } else {
-                this.cardRepository.changeState(matchValues[0]);
-                this.cardRepository.changeState(matchValues[1]);
-                console.log(this.cardRepository.cardsCollection);
-             }
+           this.matchValues = this.matchChecker.cardOpen(cardId, cardName);
+            console.log(this.matchValues)
+            if(this.matchValues.length > 3){
+                if (this.matchValues[2] === true) {
+                    numberOfMatches += 1;
+       
+                    if (numberOfMatches === 4) {
+                           this.gameRenderer.gameOver();
+                            return;
+                       }
+                    } else {
+                       this.cardRepository.changeState(this.matchValues[0]);
+                       this.cardRepository.changeState(this.matchValues[1]);
+                       console.log(this.cardRepository.cardsCollection);
+                    } 
+            }
+            
         })
 
     }
