@@ -37,13 +37,14 @@
          
 }
 
-.card.disable{
+.card__face.disable{
 pointer-events: none;
 }
 
-.card.is-flipped {
+.card__face.is-flipped {
 transform: rotateY(180deg);
 }
+
 .card__face--front {
 background: rgb(255, 240, 172);
 }
@@ -59,8 +60,9 @@ backface-visibility: hidden;
 
 .card__face--back {
 background: royalblue;
-transform: rotateY(180deg);
+
 }
+
 
 /* =========START SCREEN======== */
 .start-game-page{
