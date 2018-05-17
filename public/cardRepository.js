@@ -10,11 +10,6 @@ class CardRepository {
         this.api = new Api()
         this.dbCards = [];
         this.cardsCollection = [];
-        this.cardStates = {
-            back: 0,
-            front: 1,
-            matched: 2
-        }
     }
 
     async getCards() {
