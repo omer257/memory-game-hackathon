@@ -16,6 +16,7 @@ class EventsHandler {
                     this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
                 })
         })
+        var clickCount = 0;
 
     }
 
@@ -26,6 +27,10 @@ class EventsHandler {
         $('.cards-container').on('click','.state-{{state}}', () => {
             
         })
+    }
+
+    incrementClickCounter(){    
+        clickCount++;    
     }
 
 

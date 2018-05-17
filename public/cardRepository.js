@@ -9,8 +9,7 @@ class CardRepository {
     constructor() {
         this.api = new Api()
         this.cardsCollection = [];
-       
-        
+
     }
 
     async getCards() {
