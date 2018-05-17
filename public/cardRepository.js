@@ -8,24 +8,17 @@ import Api from './Api.js';
 class CardRepository {
     constructor() {
         this.api = new Api()
-        this.dbCards = [];
         this.cardsCollection = [];
-        this.cardStates = {
-            back: 0,
-            front: 1,
-            matched: 2
-        }
+       
+        
     }
 
     async getCards() {
 
-        this.dbCards = await this.api.fetch()
+        this.cardsCollection = await this.api.fetch()
     }
 
-    dupCards() {
-        this.cardsCollection = this.dbCards.concat(this.dbCards)
-    }
-
+    
     shuffleCards(array) {
         var i = 0
             , j = 0
@@ -38,6 +31,10 @@ class CardRepository {
             array[j] = temp
         }
         return array;
+    }
+
+    changeState(id){
+      
     }
 
 }

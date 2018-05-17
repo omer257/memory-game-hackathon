@@ -23,11 +23,6 @@
   height: 150px;
   margin-top: 10px;
   
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-    overflow: hidden;
-  
 } 
 /* ===========CARDS=========== */
 .img{
@@ -35,33 +30,57 @@
   float: right;       
 }
 
-.card__face.disabled{
-pointer-events: none;
-}
-
-.card__face.is-flipped {
-transform: rotateY(180deg);
-}
-
-.card__face--front {
-background: rgb(255, 240, 172);
-}
-.card__face {
+.side {
 position: absolute;
 width: 100%; 
 height: 100%;
 line-height: 260px;
 backface-visibility: hidden;
 }
-
-
-.card__face--back {
-background: royalblue;
-
+body {
+  font: 600 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+  margin: 12px 0;
+}
+.card-container {
+  cursor: pointer;
+  height: 150px;
+  perspective: 600;
+  position: relative;
+  width: 150px;
+}
+.card {
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+  
 }
 
-.match{
-  background: white;
+.state-0:active {
+  transform: rotateY(180deg);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+.state-2{
+  visibility: hidden;
+}
+
+.card .side {
+  backface-visibility: hidden;
+  border-radius: 6px;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+.card .back{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrexhKq00B5ZpoCt_uBVr5PMPPsn-HPAKS_i2bN2VYr6fypeYU");
+    
+}
+.card .front {
+  background: #fff9aa;
+  transform: rotateY(180deg);
 }
 /* =========START SCREEN======== */
 .start-game-page{

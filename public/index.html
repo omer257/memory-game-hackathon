@@ -39,13 +39,15 @@
     <!-- CARD TAMPLATE -->
 
     <script id="cards-template" type="text/x-handlebars-template">
+        
 
-
-        <div class="card flex-item">
+        <div class="card-container">
+        <div class="card flex-item state-{{state}}">
                
-       
-                <div class=" card__face card__face--front" id={{_id}}><img class="img" src="{{img_url}}"/></div>
-                <div class=" card__face card__face--back" id={{_id}}></div>
+                <div class=" card__face side back" id={{_id}}></div>
+                <div class=" card__face side front" id={{_id}} name={{name}}><img class="img" src="{{img_url}}"/></div>
+               
+            </div>    
     </div>
     </script>
 
