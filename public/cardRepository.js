@@ -9,14 +9,12 @@ class CardRepository {
     constructor() {
         this.api = new Api()
         this.cardsCollection = [];
-
-    }
+ }
 
     async getCards() {
+        this.cardsCollection = await this.api.fetch();
 
-        this.cardsCollection = await this.api.fetch()
     }
-
     
     shuffleCards(array) {
         var i = 0
@@ -29,11 +27,15 @@ class CardRepository {
             array[i] = array[j]
             array[j] = temp
         }
-        return array;
+        this.cardsCollection = array;
+        console.log(this.cardsCollection);
     }
 
-    changeState(id){
-      
+   changeState(cardId){
+    for(var i = 0; i < this.cardsCollection.length; i++)
+        if(this.cardsCollection[i]._id === cardId){
+            this.cardsCollection[i].state = 1;
+        }
     }
 
 }
