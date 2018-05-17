@@ -32,12 +32,10 @@
 /* ===========CARDS=========== */
 .img{
   width: 100%;
-  float: right;
-  
-         
+  float: right;       
 }
 
-.card__face.disable{
+.card__face.disabled{
 pointer-events: none;
 }
 
@@ -57,13 +55,14 @@ backface-visibility: hidden;
 }
 
 
-
 .card__face--back {
 background: royalblue;
 
 }
 
-
+.match{
+  background: white;
+}
 /* =========START SCREEN======== */
 .start-game-page{
   height: 300px;
