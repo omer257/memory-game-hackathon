@@ -11,16 +11,19 @@ class EventsHandler {
             this.cardRepository.getCards()
                 .then(() => {
 
+
             this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
             this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
             console.log(this.cardRepository.cardsCollection);
-                })
-        })
-        var clickCount = 0;
 
+                })
+           
+            console.log(this.cardRepository.cardsCollection);
+            this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
+        })
     }
 
-    clickCard() {
+
 
         $(document).on('click', '.card__face', (event) => {
             let cardId   = $(event.currentTarget).data().id;
@@ -35,16 +38,12 @@ class EventsHandler {
             
            // var matchValues = this.matchChecker.changeStates(cardId, cardName);
 
-            // if (matchValues[3] === true) {
-            //     numberOfMatches += 1;
 
-            //     if (numberOfMatches === 4) {
-            //         this.gameRenderer.gameOver();
-            //         return;
-            //     }
-            // } else {
-            //     this.cardRepository.updatedCards(matchValues[0], matchValues[1])
-            // }
+clickCard() {
+
+    $(document).on('click', '.card__face', (event) => {
+        let cardId = $(event.currentTarget).id;
+        let cardName = $(event.currentTarget).name;
 
             // this.gameRenderer.renderGameBoard(updatedcardsCollection)
         })
@@ -52,6 +51,7 @@ class EventsHandler {
     }
 
     }
+
 
 
 
