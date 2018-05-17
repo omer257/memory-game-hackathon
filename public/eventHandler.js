@@ -13,13 +13,7 @@ class EventsHandler {
 
             this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
             this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
-                })
-        })
-
-                   
-                    this.cardRepository.cardsCollection = this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
-                    console.log(this.cardRepository.cardsCollection);
-                    this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
+            console.log(this.cardRepository.cardsCollection);
                 })
         })
         var clickCount = 0;
@@ -29,14 +23,17 @@ class EventsHandler {
     clickCard() {
 
         $(document).on('click', '.card__face', (event) => {
-            let cardId = $(event.currentTarget).id;
-            let cardName = $(event.currentTarget).name;
+            let cardId   = $(event.currentTarget).data().id;
+            let cardName = $(event.currentTarget).data().name;
+
+            console.log(cardId);
+            console.log(cardName);
 
             this.cardRepository.changeState(cardId);
             this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
+            console.log(this.cardRepository.cardsCollection);
             
-           
-            // var matchValues = this.matchChecker.cardOpen(cardId, cardName);
+           // var matchValues = this.matchChecker.changeStates(cardId, cardName);
 
             // if (matchValues[3] === true) {
             //     numberOfMatches += 1;
@@ -49,21 +46,13 @@ class EventsHandler {
             //     this.cardRepository.updatedCards(matchValues[0], matchValues[1])
             // }
 
-            //this.gameRenderer.renderGameBoard(updatedcardsCollection)
+            // this.gameRenderer.renderGameBoard(updatedcardsCollection)
         })
-
-
-
-        $('.cards-container').on('click','.state-{{state}}', () => {
-            
-        })
-    }
-
-    incrementClickCounter(){    
-        clickCount++;    
 
     }
 
-}
+    }
+
+
 
 export default EventsHandler;
