@@ -10,9 +10,8 @@ class EventsHandler {
 
             this.cardRepository.getCards()
                 .then(() => {
-                    this.cardRepository.dupCards()
-                    console.log(this.cardRepository.dbCards)
-                    this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
+                   
+                    this.cardRepository.cardsCollection = this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
                     console.log(this.cardRepository.cardsCollection);
                     this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
                 })
@@ -24,6 +23,10 @@ class EventsHandler {
 
     clickCard() {
 
+
+        $('.cards-container').on('click','.state-{{state}}', () => {
+            
+        })
     }
 
     incrementClickCounter(){    
