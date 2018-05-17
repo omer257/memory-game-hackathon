@@ -21,6 +21,7 @@ class MatchChecker {
             this.openedCards = [];
         }
     }
+
 }
 
 export default MatchChecker;

@@ -10,13 +10,24 @@ class EventsHandler {
         $('#getCards').on('click', () => {
             this.cardRepository.getCards()
                 .then(() => {
+
             this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
             this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
                 })
         })
+
+                   
+                    this.cardRepository.cardsCollection = this.cardRepository.shuffleCards(this.cardRepository.cardsCollection);
+                    console.log(this.cardRepository.cardsCollection);
+                    this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
+                })
+        })
+        var clickCount = 0;
+
     }
 
     clickCard() {
+
         $(document).on('click', '.card__face', (event) => {
             let cardId = $(event.currentTarget).id;
             let cardName = $(event.currentTarget).name;
@@ -40,6 +51,17 @@ class EventsHandler {
 
             //this.gameRenderer.renderGameBoard(updatedcardsCollection)
         })
+
+
+
+        $('.cards-container').on('click','.state-{{state}}', () => {
+            
+        })
+    }
+
+    incrementClickCounter(){    
+        clickCount++;    
+
     }
 
 }

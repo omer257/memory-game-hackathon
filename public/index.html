@@ -16,10 +16,32 @@
         </div>
         <div class="flex-container cards-container">
         </div>
-
+  <!-- =====================================Game Over Popup Modal========================= -->
+    <!-- =========================================================================================-->
 
     </div>
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+  <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>WINNER</h2>
+          </div>
+          <div class="modal-body">
+            <p>Congrats, you won!</p>
+            <p>It took you <span id="tries"></span> guesses.</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Please play again!</h3>
+          </div>
+        </div>
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  
+  </div>
+  
 
 
     <!-- =====================================OPEN WHAT YOU HAVE A SERVER========================= -->
@@ -39,13 +61,15 @@
     <!-- CARD TAMPLATE -->
 
     <script id="cards-template" type="text/x-handlebars-template">
+        
 
-
-        <div class="card flex-item">
+        <div class="card-container">
+        <div class="card flex-item state-{{state}}">
                
-       
-                <div class=" card__face card__face--front" id={{_id}}><img class="img" src="{{img_url}}"/></div>
-                <div class=" card__face card__face--back" id={{_id}}></div>
+                <div class=" card__face side back" id={{_id}}></div>
+                <div class=" card__face side front" id={{_id}} name={{name}}><img class="img" src="{{img_url}}"/></div>
+               
+            </div>    
     </div>
     </script>
 

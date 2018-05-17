@@ -13,8 +13,9 @@ class CardRepository {
 
     async getCards() {
         this.cardsCollection = await this.api.fetch();
-    }
 
+    }
+    
     shuffleCards(array) {
         var i = 0
             , j = 0
@@ -36,7 +37,7 @@ class CardRepository {
             this.cardsCollection[i].state = 1;
         }
     }
-}
 
+}
 
 export default CardRepository;
