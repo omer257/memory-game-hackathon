@@ -22,10 +22,7 @@ class EventsHandler {
 
 
     clickCard() {
-        $(document).on('click', '.card__face', (event) => {
-        let $cardClicked = event.currentTarget
-            this.matchChecker.cardOpen($cardClicked);
-        })
+
     }
 
 
