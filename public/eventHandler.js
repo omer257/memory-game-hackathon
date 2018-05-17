@@ -21,14 +21,10 @@ class EventsHandler {
     }
 
 
-
     clickCard() {
-        $('.flex-container').on('click', '.card__face', () => {
-
-            let $card = $('.card')
-            let $cardId = $card.data().id
-            console.log($card)
-            this.matchChecker.cardOpen($cardId);
+        $(document).on('click', '.card__face', (event) => {
+        let $cardClicked = event.currentTarget
+            this.matchChecker.cardOpen($cardClicked);
         })
     }
 

@@ -2,16 +2,17 @@ class MatchChecker {
     constructor() {
         this.openedCards = [];
     }
-  
-    cardOpen() {
-        this.openedCards.push(this);
-        this.openedCards[0].classList.add("is-flipped");
-        this.openedCards[0].classList.add("disabled");
-        openedCards[1].classList.add("is-flipped");
-        this.openedCards[0].classList.add("disabled");
-        var len = openedCards.length;
+
+    cardOpen(clickedCard) {
+        this.openedCards.push(clickedCard);
+    console.log(this.openedCards);
+        $(this.openedCards[0]).addClass("is-flipped");
+        $(this.openedCards[0]).addClass("disabled");
+        $(this.openedCards[1]).addClass("is-flipped");
+        $(this.openedCards[0]).addClass("disabled");
+        var len = this.openedCards.length;
         if (len === 2) {
-            if (this.openedCards[0]._id === this.openedCards[1]._id) {
+            if (this.openedCards[0].id === this.openedCards[1].id) {
                 this.matched();
             } else {
                 this.unmatched();
@@ -20,14 +21,14 @@ class MatchChecker {
     };
 
     matched() {
-        let beep = ("./sounds/51.wav");
+        let beep = new Audio("51.wav");
         beep.play();
         this.disable();
-        setTimeout(function () {
-            this.openedCards[0].classList.add("is-flipped");
-            this.openedCards[1].classList.add("is-flipped");
+        setTimeout( () => {
+            $(this.openedCards[0]).addClass("is-flipped");
+            $(this.openedCards[1]).addClass("is-flipped");
         }, 2000);
-        setTimeout(function () {
+        setTimeout( () => {
             $(this.openedCards[0]).hide();
             $(this.openedCards[1]).hide();
             this.enable();
@@ -36,23 +37,23 @@ class MatchChecker {
     }
 
     unmatched() {
-        let buzz = new Audio("./sounds/buzz.wav");
+        let buzz = new Audio("buzzer.wav");
         buzz.play();
         this.disable();
-        setTimeout(function () {
-            $(this.openedCards[0]).classList.add("is-flipped");
-            $(this.openedCards[1]).classList.add("is-flipped");
+        setTimeout( () => {
+            $(this.openedCards[0]).addClass("is-flipped");
+            $(this.openedCards[1]).addClass("is-flipped");
             this.enable();
         }, 2000);
         this.openedCards = [];
     }
 
     disable() {
-        card.classList.add('disabled');
+        $('.card').addClass('disabled');
     }
 
     enable() {
-        card.classList.remove('disabled');
+        $('.card').removeClass('disabled');
     }
 }
 
