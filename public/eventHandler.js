@@ -17,12 +17,17 @@ class EventsHandler {
                     this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
                 })
         })
+        var clickCount = 0;
 
     }
 
 
     clickCard() {
 
+    }
+
+    incrementClickCounter(){    
+        clickCount++;    
     }
 
 
