@@ -13,12 +13,16 @@ class MatchChecker {
         if (len === 2) {
             if (this.openedCards[0] !== this.openedCards[2] && this.openedCards[1] === this.openedCards[3]) {
                 var theyMatch = [this.openedCards[0], this.openedCards[2], true];
+                this.openedCards = [];
+                console.log(this.openedCards);
                 return theyMatch;
             } else {
                 var theyNoMatch = [this.openedCards[0], this.openedCards[2], false];
-                return theyMatch;
+                this.openedCards = [];
+                console.log(this.openedCards);
+                return theyNoMatch;
             }
-            this.openedCards = [];
+
         }
     }
 

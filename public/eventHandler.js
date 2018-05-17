@@ -33,20 +33,20 @@ class EventsHandler {
             this.gameRenderer.renderGameBoard(this.cardRepository.cardsCollection);
             console.log(this.cardRepository.cardsCollection);
             
-           // var matchValues = this.matchChecker.changeStates(cardId, cardName);
+           var matchValues = this.matchChecker.cardOpen(cardId, cardName);
 
-            // if (matchValues[3] === true) {
-            //     numberOfMatches += 1;
+            if (matchValues[2] === true) {
+             numberOfMatches += 1;
 
-            //     if (numberOfMatches === 4) {
-            //         this.gameRenderer.gameOver();
-            //         return;
-            //     }
-            // } else {
-            //     this.cardRepository.updatedCards(matchValues[0], matchValues[1])
-            // }
-
-            // this.gameRenderer.renderGameBoard(updatedcardsCollection)
+                if (numberOfMatches === 4) {
+                    this.gameRenderer.gameOver();
+                     return;
+                }
+             } else {
+                this.cardRepository.changeState(matchValues[0]);
+                this.cardRepository.changeState(matchValues[1]);
+                console.log(this.cardRepository.cardsCollection);
+             }
         })
 
     }
