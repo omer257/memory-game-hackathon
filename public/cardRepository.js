@@ -8,22 +8,11 @@ import Api from './Api.js';
 class CardRepository {
     constructor() {
         this.api = new Api()
-        this.dbCards = [];
         this.cardsCollection = [];
-        this.cardStates = {
-            back: 0,
-            front: 1,
-            matched: 2
-        }
-    }
+ }
 
     async getCards() {
-
-        this.dbCards = await this.api.fetch()
-    }
-
-    dupCards() {
-        this.cardsCollection = this.dbCards.concat(this.dbCards)
+        this.cardsCollection = await this.api.fetch();
     }
 
     shuffleCards(array) {
@@ -37,9 +26,17 @@ class CardRepository {
             array[i] = array[j]
             array[j] = temp
         }
-        return array;
+        this.cardsCollection = array;
+        console.log(this.cardsCollection);
     }
 
+   changeState(cardId){
+    for(var i = 0; i < this.cardsCollection.length; i++)
+        if(this.cardsCollection[i]._id === cardId){
+            this.cardsCollection[i].state = 1;
+        }
+    }
 }
+
 
 export default CardRepository;
