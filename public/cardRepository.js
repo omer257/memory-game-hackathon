@@ -39,10 +39,14 @@ class CardRepository {
         }
 
     }
-
+    changeStates(cardId, cardName){
+        for(var i = 0; i < this.cardsCollection.length; i++)
+        if(this.cardsCollection[i]._id === cardId){
+            this.cardsCollection[i].state = 1;
+            console.log(this.cardsCollection);
+        }
+    }
 }
-// changeStates(cardId, cardName){
 
-// }
 
 export default CardRepository;
