@@ -4,7 +4,11 @@ var mongoose = require('mongoose');
 
 const SERVER_PORT = 8080;
 
-mongoose.connect('mongodb://localhost/memoryGameDB', function () {
+
+// mongoose.connect('mongodb://localhost/memoryGameDB', function () {
+//   console.log("DB connection established!!!");
+// })
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/memoryGameDB', function () {
   console.log("DB connection established!!!");
 })
 
@@ -113,6 +117,10 @@ app.post('/cards', function (request, response) {
 
 
 
-app.listen(SERVER_PORT, () => {
+// app.listen(SERVER_PORT, () => {
+//   console.log("Server started on port " + SERVER_PORT);
+// });
+
+app.listen(process.env.PORT || SERVER_PORT, () => {
   console.log("Server started on port " + SERVER_PORT);
 });
