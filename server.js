@@ -2,7 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+// **** Should address the port replacement here and not below- confusing.
 const SERVER_PORT = 8080;
+// **** remove all un used code
 
 
 // mongoose.connect('mongodb://localhost/memoryGameDB', function () {
@@ -11,7 +13,7 @@ const SERVER_PORT = 8080;
 mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/memoryGameDB', function () {
   console.log("DB connection established!!!");
 })
-
+// ** cardModel should be with capital letter for a class
 var Card = require('./models/cardModel');
 
 var app = express();
@@ -21,6 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+//*** this code will create on every load new records in the database, is this the intention?
 
 var card1 = new Card({
   name: "burger",
@@ -33,7 +37,7 @@ card1.save(function (error, card) /* <--- callback function */ {
   }
   console.log(card);
 });
-
+// *** DRY - repeating function - double save...
 card1.save(function (error, card) /* <--- callback function */ {
   if (error) {
     return console.error(error);
@@ -85,6 +89,8 @@ card4.save(function (error, card) /* <--- callback function */ {
 // You will need to create 5 server routes
 // These will define your API:
 
+//*** good error handeling.
+
 // 1) to handle the shuffle of the cards
 app.get('/cards', function (req, res) {
   Card.find({}, function(err, allCards){
@@ -120,7 +126,7 @@ app.post('/cards', function (request, response) {
 // app.listen(SERVER_PORT, () => {
 //   console.log("Server started on port " + SERVER_PORT);
 // });
-
+//** as mentioned before the port switch should be in the start of the code.
 app.listen(process.env.PORT || SERVER_PORT, () => {
   console.log("Server started on port " + SERVER_PORT);
 });
