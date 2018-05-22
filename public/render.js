@@ -16,7 +16,7 @@ class GameRenderer {
         }
     }
 
-
+//**?
     renderScore() {
 
     }
